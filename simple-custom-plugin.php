@@ -42,11 +42,7 @@ class LRCP_Plugin {
   }
 
   public function register_settings() {
-    register_setting(
-      'lrcp_group',
-      $this->option_key,
-      [$this, 'sanitize']
-    );
+    register_setting( 'lrcp_group', $this->option_key, [$this, 'sanitize'] );
 
     add_settings_section(
       'lrcp_section',
@@ -131,7 +127,7 @@ class LRCP_Plugin {
       'text_color' => '#000000',
     ];
 
-    $options  = get_option( $this->option_key, $defaults );
+    $options = get_option( $this->option_key, $defaults );
 
     $message = trim( (string) $options['message'] );
     if ( $message === '' ) {
@@ -144,15 +140,15 @@ class LRCP_Plugin {
       esc_attr( $options['message'] ),
     );
   }
-
 }
 
 register_activation_hook( __FILE__, function () {
   $defaults = [
-    'message'     => '',
-    'bg_color'    => '#ffffff',
-    'text_color'  => '#000000',
+    'message' => '',
+    'bg_color' => '#ffffff',
+    'text_color' => '#000000',
   ];
+
   add_option( 'lrcp_options', $defaults );
 });
 

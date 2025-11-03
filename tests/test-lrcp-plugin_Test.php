@@ -1,12 +1,7 @@
 <?php
-/**
- * @group lrcp
- */
+
 class LRCP_Plugin_Test extends WP_UnitTestCase {
 
-  /**
-   * @var LRCP_Plugin
-   */
   private $plugin;
 
   public function setUp(): void {
@@ -60,8 +55,8 @@ class LRCP_Plugin_Test extends WP_UnitTestCase {
 
   public function test_render_message_prints_when_non_empty() {
     update_option( 'lrcp_options', [
-      'message'    => 'Hello Front',
-      'bg_color'   => '',
+      'message' => 'Hello Front',
+      'bg_color' => '',
       'text_color' => '',
     ] );
 
@@ -76,8 +71,8 @@ class LRCP_Plugin_Test extends WP_UnitTestCase {
 
   public function test_render_message_prints_nothing_when_empty() {
     update_option( 'lrcp_options', [
-      'message'    => '   ',
-      'bg_color'   => '#000000',
+      'message' => '   ',
+      'bg_color' => '#000000',
       'text_color' => '#ffffff',
     ] );
 

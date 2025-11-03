@@ -1,4 +1,5 @@
 <?php
+// Adjust the route to your local environment.
 define( 'ABSPATH', dirname( __DIR__, 4 ) . '/' );
 
 define( 'DB_NAME', 'wordpress_test' );
